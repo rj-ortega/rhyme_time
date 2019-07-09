@@ -1,0 +1,819 @@
+Started GET "/" for ::1 at 2019-07-08 17:57:13 -0600
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateWords (20190708172748)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "words" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "audio" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190708172748_create_words.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190708172748"]]
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUsers (20190708233748)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUsers (20190708233748)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190708233748_create_users.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190708233748_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190708233748"]]
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserWords (20190708234200)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "user_words" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "word_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_9a7e1a63f0"
+FOREIGN KEY ("word_id")
+  REFERENCES "words" ("id")
+, CONSTRAINT "fk_rails_3d5fa71346"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190708234200_create_user_words.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_user_words_on_word_id" ON "user_words" ("word_id")[0m
+  ↳ db/migrate/20190708234200_create_user_words.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_user_words_on_user_id" ON "user_words" ("user_id")[0m
+  ↳ db/migrate/20190708234200_create_user_words.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190708234200"]]
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateHaikus (20190708234240)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "haikus" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "poem" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190708234240_create_haikus.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190708234240"]]
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserHaikus (20190708234321)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "user_haikus" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "haiku_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_a8095aeee6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_04b2046dd9"
+FOREIGN KEY ("haiku_id")
+  REFERENCES "haikus" ("id")
+)[0m
+  ↳ db/migrate/20190708234321_create_user_haikus.rb:3
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_user_haikus_on_user_id" ON "user_haikus" ("user_id")[0m
+  ↳ db/migrate/20190708234321_create_user_haikus.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_user_haikus_on_haiku_id" ON "user_haikus" ("haiku_id")[0m
+  ↳ db/migrate/20190708234321_create_user_haikus.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190708234321"]]
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-08 23:58:42.739695"], ["updated_at", "2019-07-08 23:58:42.739695"]]
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/" for ::1 at 2019-07-08 17:58:54 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Rj/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Rj/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Rj/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (5.1ms)
+Completed 200 OK in 22ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/words" for ::1 at 2019-07-08 17:59:01 -0600
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  ↳ app/views/words/index.html.erb:17
+  Rendered words/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 1678ms (Views: 1648.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/words/new" for ::1 at 2019-07-08 17:59:05 -0600
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (70.7ms)
+  Rendered words/new.html.erb within layouts/application (74.0ms)
+Completed 200 OK in 120ms (Views: 97.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/words/edit" for ::1 at 2019-07-08 17:59:12 -0600
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+Completed 404 Not Found in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Word with 'id'=edit):
+  
+app/controllers/words_controller.rb:67:in `set_word'
+Started GET "/words/edit" for ::1 at 2019-07-08 18:00:35 -0600
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+Completed 404 Not Found in 18ms (ActiveRecord: 1.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Word with 'id'=edit):
+  
+app/controllers/words_controller.rb:67:in `set_word'
+Started GET "/users/edit" for ::1 at 2019-07-08 18:00:59 -0600
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `block in load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:79:in `rescue in load_missing_constant'
+bootsnap (1.4.4) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `load_missing_constant'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.3) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/words/edit" for ::1 at 2019-07-08 18:01:20 -0600
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Word with 'id'=edit):
+  
+app/controllers/words_controller.rb:67:in `set_word'
+Started GET "/words/1/edit" for ::1 at 2019-07-08 18:01:49 -0600
+Processing by WordsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Word with 'id'=1):
+  
+app/controllers/words_controller.rb:67:in `set_word'
+Started GET "/words/" for ::1 at 2019-07-08 18:01:58 -0600
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  ↳ app/views/words/index.html.erb:17
+  Rendered words/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 65ms (Views: 58.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/words/new" for ::1 at 2019-07-08 18:02:00 -0600
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (5.1ms)
+  Rendered words/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 51ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/words/new" for ::1 at 2019-07-08 18:02:48 -0600
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (4.9ms)
+  Rendered words/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/words/new" for ::1 at 2019-07-08 18:02:50 -0600
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (3.2ms)
+  Rendered words/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 86ms (Views: 82.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/words/new" for ::1 at 2019-07-08 18:02:52 -0600
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (2.6ms)
+  Rendered words/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/words/" for ::1 at 2019-07-08 18:03:01 -0600
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  ↳ app/views/words/index.html.erb:12
+  Rendered words/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/words/new" for ::1 at 2019-07-08 18:03:04 -0600
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (9.9ms)
+  Rendered words/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 67ms (Views: 63.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/words/new" for ::1 at 2019-07-08 18:03:29 -0600
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (2.7ms)
+  Rendered words/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 39ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words" for ::1 at 2019-07-08 18:03:58 -0600
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4QVNxpJfm+txiKzcop1M9bl82Sr01zkWUyzmu2CKQOZ4uuiAl4GsP8d+kMdWAK5tJLfkY4Gj3wwHUY06iHwEdw==", "word"=>{"name"=>"Spoon", "audio"=>"n/a"}, "commit"=>"Create Word"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/words_controller.rb:30
+  [1m[36mWord Create (0.8ms)[0m  [1m[32mINSERT INTO "words" ("name", "audio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Spoon"], ["audio", "n/a"], ["created_at", "2019-07-09 00:03:58.220029"], ["updated_at", "2019-07-09 00:03:58.220029"]]
+  ↳ app/controllers/words_controller.rb:30
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/words_controller.rb:30
+Redirected to http://localhost:3000/words/1
+Completed 302 Found in 10ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/words/1" for ::1 at 2019-07-08 18:03:58 -0600
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (16.3ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `pronunciation' for #<Word:0x00007fa3f7604ff8>):
+     7: 
+     8: <p>
+     9:   <strong>Pronunciation:</strong>
+    10:   <%= @word.pronunciation %>
+    11: </p>
+    12: 
+    13: <p>
+  
+app/views/words/show.html.erb:10:in `_app_views_words_show_html_erb__945560152035031571_70171103356460'
+Started GET "/words/1" for ::1 at 2019-07-08 18:04:27 -0600
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 77ms (Views: 73.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/words/1/edit" for ::1 at 2019-07-08 18:04:33 -0600
+Processing by WordsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/edit.html.erb within layouts/application
+  Rendered words/_form.html.erb (6.7ms)
+  Rendered words/edit.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 113ms (Views: 106.5ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/words/1" for ::1 at 2019-07-08 18:04:38 -0600
+Processing by WordsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+cBg/yWSO0rsm8AnL0sr7xtJnrIFn/Cr8Y1kPVEKyDq71awJEz5J+xha0NLtMx7BBLz/5g/AoSVLY0mLuHYg1g==", "word"=>{"name"=>"Spoon", "audio"=>"n"}, "commit"=>"Update Word", "id"=>"1"}
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/words_controller.rb:44
+  [1m[36mWord Update (1.8ms)[0m  [1m[33mUPDATE "words" SET "audio" = ?, "updated_at" = ? WHERE "words"."id" = ?[0m  [["audio", "n"], ["updated_at", "2019-07-09 00:04:38.692960"], ["id", 1]]
+  ↳ app/controllers/words_controller.rb:44
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/words_controller.rb:44
+Redirected to http://localhost:3000/words/1
+Completed 302 Found in 13ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/words/1" for ::1 at 2019-07-08 18:04:38 -0600
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/words/1/edit" for ::1 at 2019-07-08 18:04:44 -0600
+Processing by WordsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/edit.html.erb within layouts/application
+  Rendered words/_form.html.erb (7.0ms)
+  Rendered words/edit.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 49ms (Views: 46.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/words/1/destroy" for ::1 at 2019-07-08 18:04:54 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/words/1/destroy"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/words/1/" for ::1 at 2019-07-08 18:13:42 -0600
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Rj/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (2.4ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 606ms (Views: 562.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/words/1/" for ::1 at 2019-07-08 18:13:44 -0600
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 51ms (Views: 46.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/words/1/edit" for ::1 at 2019-07-08 18:13:48 -0600
+Processing by WordsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/edit.html.erb within layouts/application
+  Rendered words/_form.html.erb (52.7ms)
+  Rendered words/edit.html.erb within layouts/application (59.2ms)
+Completed 200 OK in 86ms (Views: 81.4ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/words/1" for ::1 at 2019-07-08 18:13:55 -0600
+Processing by WordsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0dIUnKDJxH5ab9ZguWr1kR1nO0lLd2kl5XDAARCVebKTx9hqlmW2z66uxpV7EsC/ApJaHUEoOKtfnu23+emRXg==", "word"=>{"name"=>"", "audio"=>""}, "commit"=>"Update Word", "id"=>"1"}
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/words_controller.rb:44
+  [1m[36mWord Update (0.8ms)[0m  [1m[33mUPDATE "words" SET "name" = ?, "audio" = ?, "updated_at" = ? WHERE "words"."id" = ?[0m  [["name", ""], ["audio", ""], ["updated_at", "2019-07-09 00:13:55.194949"], ["id", 1]]
+  ↳ app/controllers/words_controller.rb:44
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/words_controller.rb:44
+Redirected to http://localhost:3000/words/1
+Completed 302 Found in 11ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/words/1" for ::1 at 2019-07-08 18:13:55 -0600
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 48ms (Views: 44.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/words/1/edit" for ::1 at 2019-07-08 18:13:59 -0600
+Processing by WordsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/edit.html.erb within layouts/application
+  Rendered words/_form.html.erb (5.7ms)
+  Rendered words/edit.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 84ms (Views: 76.8ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/words/1" for ::1 at 2019-07-08 18:14:04 -0600
+Processing by WordsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GoW+YACuO5729r7YcxJUHyK5Y/WNwgVXUwkMSbCsDY9YkHKWNgJJLwI3ri2xamExPUwCoYedVNnp5yH/WdDlYw==", "word"=>{"name"=>"Spoon", "audio"=>"n/a"}, "commit"=>"Update Word", "id"=>"1"}
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/words_controller.rb:44
+  [1m[36mWord Update (0.6ms)[0m  [1m[33mUPDATE "words" SET "name" = ?, "audio" = ?, "updated_at" = ? WHERE "words"."id" = ?[0m  [["name", "Spoon"], ["audio", "n/a"], ["updated_at", "2019-07-09 00:14:04.937596"], ["id", 1]]
+  ↳ app/controllers/words_controller.rb:44
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/words_controller.rb:44
+Redirected to http://localhost:3000/words/1
+Completed 302 Found in 18ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/words/1" for ::1 at 2019-07-08 18:14:04 -0600
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 89ms (Views: 87.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/words" for ::1 at 2019-07-08 18:14:07 -0600
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  ↳ app/views/words/index.html.erb:12
+  Rendered words/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 55ms (Views: 41.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/words/1/edit" for ::1 at 2019-07-08 18:15:01 -0600
+Processing by WordsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/edit.html.erb within layouts/application
+  Rendered words/_form.html.erb (3.3ms)
+  Rendered words/edit.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 88ms (Views: 85.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/words/1/edit" for ::1 at 2019-07-08 18:15:41 -0600
+Processing by WordsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/edit.html.erb within layouts/application
+  Rendered words/_form.html.erb (3.7ms)
+  Rendered words/edit.html.erb within layouts/application (414.9ms)
+Completed 500 Internal Server Error in 422ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `word' for #<#<Class:0x00007faf66ae4008>:0x00007faf6c0115d0>
+Did you mean?  @word):
+    3: <%= render 'form', word: @word %>
+    4: 
+    5: <%= link_to 'Show', @word %> |
+    6: <td><%= word.definition %></td>
+    7: 
+    8: <%= link_to 'Back', words_path %>
+  
+app/views/words/edit.html.erb:6:in `_app_views_words_edit_html_erb__1575268565443196459_70195704008460'
+Started GET "/words/1/edit" for ::1 at 2019-07-08 18:16:15 -0600
+Processing by WordsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/edit.html.erb within layouts/application
+  Rendered words/_form.html.erb (6.1ms)
+  Rendered words/edit.html.erb within layouts/application (869.7ms)
+Completed 500 Internal Server Error in 878ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `word' for #<#<Class:0x00007faf66ae4008>:0x00007faf6c0ba130>
+Did you mean?  @word):
+    1: <h1>Editing Word</h1>
+    2: <%= render 'form', word: @word %>
+    3: <%= link_to 'Show', @word %> |
+    4: <td><%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    5: <%= link_to 'Back', words_path %>
+  
+app/views/words/edit.html.erb:4:in `_app_views_words_edit_html_erb__1575268565443196459_70195704353980'
+Started GET "/words/1/edit" for ::1 at 2019-07-08 18:17:03 -0600
+Processing by WordsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/edit.html.erb within layouts/application
+  Rendered words/_form.html.erb (2.4ms)
+  Rendered words/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/words/1/edit" for ::1 at 2019-07-08 18:17:16 -0600
+Processing by WordsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/edit.html.erb within layouts/application
+  Rendered words/_form.html.erb (3.0ms)
+  Rendered words/edit.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/words/1/edit" for ::1 at 2019-07-08 18:17:35 -0600
+Processing by WordsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/edit.html.erb within layouts/application
+  Rendered words/_form.html.erb (3.3ms)
+  Rendered words/edit.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 29ms (Views: 25.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/words/1" for ::1 at 2019-07-08 18:17:38 -0600
+Processing by WordsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WBczlAHyjFNZArPcr2AmqBvnE8C24BLxvw8MoIXokxPBqJbSBCy7h+/0j8db/cQwhiwuicOU9OvrcmchbR7Xgg==", "id"=>"1"}
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/words_controller.rb:57
+  [1m[36mWord Destroy (2.5ms)[0m  [1m[31mDELETE FROM "words" WHERE "words"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/words_controller.rb:57
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/words_controller.rb:57
+Redirected to http://localhost:3000/words
+Completed 302 Found in 10ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/words" for ::1 at 2019-07-08 18:17:38 -0600
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  ↳ app/views/words/index.html.erb:12
+  Rendered words/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 25ms (Views: 21.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/words" for ::1 at 2019-07-08 18:17:41 -0600
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  ↳ app/views/words/index.html.erb:12
+  Rendered words/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/words" for ::1 at 2019-07-08 18:17:42 -0600
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  ↳ app/views/words/index.html.erb:12
+  Rendered words/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 60ms (Views: 59.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/words/new" for ::1 at 2019-07-08 18:17:56 -0600
+Processing by WordsController#new as HTML
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/_form.html.erb (2.1ms)
+  Rendered words/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 56ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/words" for ::1 at 2019-07-08 18:18:24 -0600
+Processing by WordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wW4dJwWblwfpOtgSsYc03piFsUnK7nFF4rI3FhnY/nV9EaemzQTbC6bOQ2jWdCaqbwNRvnn8yPmAK3dsPKMMfA==", "word"=>{"name"=>"Towlie", "audio"=>"\"let's get high\""}, "commit"=>"Create Word"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/words_controller.rb:30
+  [1m[36mWord Create (4.0ms)[0m  [1m[32mINSERT INTO "words" ("name", "audio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Towlie"], ["audio", "\"let's get high\""], ["created_at", "2019-07-09 00:18:24.591223"], ["updated_at", "2019-07-09 00:18:24.591223"]]
+  ↳ app/controllers/words_controller.rb:30
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/words_controller.rb:30
+Redirected to http://localhost:3000/words/2
+Completed 302 Found in 16ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/words/2" for ::1 at 2019-07-08 18:18:24 -0600
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 55ms (Views: 49.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/words" for ::1 at 2019-07-08 18:18:29 -0600
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  ↳ app/views/words/index.html.erb:12
+  Rendered words/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 52ms (Views: 49.6ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (2.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_deployment"[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "my_database_test"[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (673.0ms)[0m  [1m[35mCREATE DATABASE "my_database_deployment" ENCODING = 'utf8'[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (467.5ms)[0m  [1m[35mCREATE DATABASE "my_database_test" ENCODING = 'utf8'[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (51.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (49.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4647406858592125215)[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateWords (20190708172748)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (51.0ms)[0m  [1m[35mCREATE TABLE "words" ("id" bigserial primary key, "name" character varying, "audio" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190708172748_create_words.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708172748"]]
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUsers (20190708233748)
+  [1m[35m (40.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190708233748_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708233748"]]
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserWords (20190708234200)
+  [1m[35m (39.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "user_words" ("id" bigserial primary key, "word_id" bigint, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9a7e1a63f0"
+FOREIGN KEY ("word_id")
+  REFERENCES "words" ("id")
+, CONSTRAINT "fk_rails_3d5fa71346"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190708234200_create_user_words.rb:3
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE  INDEX  "index_user_words_on_word_id" ON "user_words"  ("word_id")[0m
+  ↳ db/migrate/20190708234200_create_user_words.rb:3
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_user_words_on_user_id" ON "user_words"  ("user_id")[0m
+  ↳ db/migrate/20190708234200_create_user_words.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708234200"]]
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateHaikus (20190708234240)
+  [1m[35m (41.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "haikus" ("id" bigserial primary key, "poem" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190708234240_create_haikus.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708234240"]]
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUserHaikus (20190708234321)
+  [1m[35m (40.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "user_haikus" ("id" bigserial primary key, "user_id" bigint, "haiku_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_a8095aeee6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_04b2046dd9"
+FOREIGN KEY ("haiku_id")
+  REFERENCES "haikus" ("id")
+)[0m
+  ↳ db/migrate/20190708234321_create_user_haikus.rb:3
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_user_haikus_on_user_id" ON "user_haikus"  ("user_id")[0m
+  ↳ db/migrate/20190708234321_create_user_haikus.rb:3
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE  INDEX  "index_user_haikus_on_haiku_id" ON "user_haikus"  ("haiku_id")[0m
+  ↳ db/migrate/20190708234321_create_user_haikus.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190708234321"]]
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-09 01:09:56.074352"], ["updated_at", "2019-07-09 01:09:56.074352"]]
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (224.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4647406858592125215)[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Rj/.rvm/rubies/ruby-2.6.1/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
