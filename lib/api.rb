@@ -23,5 +23,18 @@ class Api
       rhyme["word"]
     end
   end
+
+  def self.audio_data_for(word)
+    api = RestClient.get("https://www.dictionaryapi.com/api/v3/references/collegiate/json/#{word}?key=09982698-9705-4f75-a74b-17ef39e4a37b")
+    audio_hash = JSON.parse(api)
+    audio_hash[0]["hwi"]["prs"][0]["sound"]
+  end
+
+  def self.audio_for(word)
+    # subdirectory = the first letter of the searched word
+    base_filename = self.audio_data_for(word)["audio"]
+    subdirectory = word[0]
+    "https://media.merriam-webster.com/soundc11/#{subdirectory}/#{base_filename}.wav"
+  end
   
 end
