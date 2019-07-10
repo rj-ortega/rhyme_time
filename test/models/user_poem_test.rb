@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class HaikuTest < ActiveSupport::TestCase
+class UserPoemTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

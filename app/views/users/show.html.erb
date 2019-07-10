@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <%= link_to "Add Word", new_word_path %>
+  <strong>List of Words:</strong>
+  <% @words.each do |word| %>
+    <li><%= word.name %></li>
+    <%= link_to "Delete Word", @word, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</p>
+<p>
+  <strong>List of Poems:</strong>
+  <% @poems.each do |poem| %>
+    <li><%= poem.poem %></li>
+    <%= link_to "edit", edit_poem_path(poem) %>
+  <% end %>
+</p>
+<% if @user && @user.id %>
+  <%= link_to "Logout", login_path, method: :delete %> |
+<% end %>
+<%= link_to 'Delete Account *to do*', users_path %>

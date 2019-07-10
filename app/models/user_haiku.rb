@@ -1,4 +1,0 @@
-class UserHaiku < ApplicationRecord
-  belongs_to :user
-  belongs_to :haiku
-end
