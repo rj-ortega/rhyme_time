@@ -1,5 +1,6 @@
 class WordsController < ApplicationController
   before_action :set_word, only: :destroy
+
   def new
     @word = Word.new
   end
@@ -9,11 +10,9 @@ class WordsController < ApplicationController
 
     respond_to do |format|
       if @word.save
-        format.html { redirect_to @word, notice: "Word was successfully created." }
-        format.json { render :show, status: :created, location: @word }
+        format.html { redirect_to @user, notice: "Word was successfully created." }
       else
         format.html { render :new }
-        format.json { render json: @word.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -24,7 +23,7 @@ class WordsController < ApplicationController
       format.html { redirect_to user_path(@user), notice: "Word was successfully deleted." }
     end
   end
-  
+
   private
 
   def set_word
