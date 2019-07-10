@@ -15,19 +15,19 @@ ActiveRecord::Schema.define(version: 2019_07_08_234321) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "haikus", force: :cascade do |t|
+  create_table "poems", force: :cascade do |t|
     t.text "poem"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_haikus", force: :cascade do |t|
+  create_table "user_poems", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "haiku_id"
+    t.bigint "poem_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["haiku_id"], name: "index_user_haikus_on_haiku_id"
-    t.index ["user_id"], name: "index_user_haikus_on_user_id"
+    t.index ["poem_id"], name: "index_user_poems_on_poem_id"
+    t.index ["user_id"], name: "index_user_poems_on_user_id"
   end
 
   create_table "user_words", force: :cascade do |t|
@@ -41,19 +41,20 @@ ActiveRecord::Schema.define(version: 2019_07_08_234321) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "words", force: :cascade do |t|
     t.string "name"
-    t.string "audio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "user_haikus", "haikus"
-  add_foreign_key "user_haikus", "users"
+  add_foreign_key "user_poems", "poems"
+  add_foreign_key "user_poems", "users"
   add_foreign_key "user_words", "users"
   add_foreign_key "user_words", "words"
 end
