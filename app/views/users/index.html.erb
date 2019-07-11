@@ -13,6 +13,12 @@
       <td><%= link_to 'Sign Up', signup_path %></td>
       <td><%= link_to 'See all Poems', poems_path %></td>
     </tr>
+    <div>
+    <%= @title %><br>
+    <% @lines_array.each do |line| %>
+    <%= line %>
+    <% end %>
+    </div>
   </tbody>
 </table>
 <br>

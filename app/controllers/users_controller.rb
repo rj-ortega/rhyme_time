@@ -3,6 +3,9 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    random_shakes = ApiService.shakespeare
+    @title = random_shakes["title"]
+    @lines_array = random_shakes["lines"]
   end
 
   def show
