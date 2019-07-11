@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 <p>
   <strong>List of Words:</strong>
-  <%= link_to "Add Word", new_word_path %>
+  <%= link_to "Add Word", new_word_path, class: "button" %>
   <% @user.words.each do |word| %>
     <li><%= word.name %></li>
-    <%= link_to "Delete Word", @word, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to "Delete Word", @word, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
   <% end %>
 </p>
 <p>
   <strong>List of Poems:</strong>
   <% @user.poems.each do |poem| %>
     <li><%= poem.poem %></li>
-    <%= link_to "edit", edit_poem_path(poem) %>
+    <%= link_to "edit", edit_poem_path(poem), class: "button" %>
   <% end %>
 </p>
 <% if @user && @user.id %>
-  <%= link_to "Logout", login_path, method: :delete %> |
+  <%= link_to "Logout", login_path, method: :delete, class: "button" %> |
 <% end %>
-<%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>

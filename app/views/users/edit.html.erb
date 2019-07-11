@@ -22,6 +22,6 @@
     <%= form.submit %>
   </div>
 <% end %>
-<%= link_to 'Show', @word %> |
-<%= link_to 'Destroy', @word, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', words_path %>
+<%= link_to 'Show', @word, class: "button" %> |
+<%= link_to 'Destroy', @word, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %> |
+<%= link_to 'Back', words_path, class: "button" %>

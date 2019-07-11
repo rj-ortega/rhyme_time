@@ -12,10 +12,10 @@
       <tr>
         <td><%= poem.title %></td>
         <td><%= poem.poem %></td>
-        <td><%= link_to 'Go back', user_path %></td>
+        <td><%= link_to 'Go back', user_path, class: "button" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-<%= link_to 'New Word', new_word_path %>
+<%= link_to 'New Word', new_word_path, class: "button" %>
