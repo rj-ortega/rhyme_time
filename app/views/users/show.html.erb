@@ -4,7 +4,10 @@
   <%= link_to "Add Word", new_word_path %>
   <% @user.words.each do |word| %>
     <li><%= word.name.capitalize %></li>
-    <%= select("post", "person_id", ApiService.rhymes_with(word.name), { include_blank: false }) %>
+    <p><%= "#{word.name.capitalize} rhymes with" %></p>
+    <%= select("rhymes", "words_id", ApiService.rhymes_with(word.name), { include_blank: false }) %>
+    <p><%= "Descriptions of #{word.name.capitalize}" %></p>
+    <%= select("adjectives", "words_id", ApiService.adjectives_for(word.name), { include_blank: false }) %>
     <%= button_to "Delete Word", word_path(word), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 </p>

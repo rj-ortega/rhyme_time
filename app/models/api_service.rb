@@ -18,7 +18,7 @@ class ApiService
     rhymes = JSON.parse(api)
     rhymes.first(15).map do |rhyme|
       rhyme["word"]
-    end.collect {|p| [ p ] }
+    end
   end
 
   def self.audio_data_for(word)
@@ -38,8 +38,6 @@ class ApiService
     api = RestClient.get("http://poetrydb.org/author,title/Shakespeare;Sonnet")
     shakes = JSON.parse(api)
     welcome_verse = shakes.sample
-    @title = welcome_verse["title"]
-    @lines_array = welcome_verse["lines"]
   end
 
 end
