@@ -7,10 +7,12 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <header>
-    <h1 id="logo">Rhyme Time</h1>
-  </header>
-  <body>
-    <%= yield %>
+  <body class="container">
+    <div class="header">
+      <h1>Rhyme Time</h1>
+    </div>
+    <a id="school_logo" href="https://flatironschool.com/"><img src="/assets/flatiron.gif" title="Flatiron Schools"></a>
+    <a id="github_logo" href="https://github.com/rjortega/rhyme_time"><img src="/assets/github.png" title="Github Project"></a>
+    <div class="body_yield"> <%= yield %> </div>
   </body>
 </html>

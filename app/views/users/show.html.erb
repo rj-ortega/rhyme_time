@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 <p>
   <strong>List of Words:</strong>
-  <%= link_to "Add Word", new_word_path %>
+  <%= link_to "Add Word", new_word_path, class: "button" %>
   <% @user.words.each do |word| %>
     <li><%= word.name.capitalize %></li>
     <p><%= "#{word.name.capitalize} rhymes with" %></p>
     <%= select("rhymes", "words_id", ApiService.rhymes_with(word.name), { include_blank: false }) %>
     <p><%= "Descriptions of #{word.name.capitalize}" %></p>
     <%= select("adjectives", "words_id", ApiService.adjectives_for(word.name), { include_blank: false }) %>
-    <%= button_to "Delete Word", word_path(word), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= button_to "Delete Word", word_path(word), method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
   <% end %>
 </p>
 <p>
@@ -16,10 +16,10 @@
   <% @user.poems.each do |poem| %>
     <%= byebug %>
     <li><%= poem.poem %></li>
-    <%= link_to "edit", edit_poem_path(poem) %>
+    <%= link_to "edit", edit_poem_path(poem), class: "button" %>
   <% end %>
 </p>
 <% if @user && @user.id %>
-  <%= link_to "Logout", login_path, method: :delete %> |
+  <%= link_to "Logout", login_path, method: :delete, class: "button" %> |
 <% end %>
-<%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
