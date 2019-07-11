@@ -1,13 +1,31 @@
 require "rails_helper"
 
-describe "Route to view" do
+describe "Route to views" do
+
  it 'has an index page' do
    visit '/users'
 
    expect(page.status_code).to eq(200)
  end
-end
 
+  it 'has an poem index page' do
+    visit '/poems'
+ 
+    expect(page.status_code).to eq(200)
+  end
+
+  it 'has an sign up page' do
+    visit '/signup'
+ 
+    expect(page.status_code).to eq(200)
+  end
+
+  it 'has an login page' do
+    visit '/login'
+ 
+    expect(page.status_code).to eq(200)
+  end
+end
 
 describe 'Welcome navigate' do
     before do

@@ -6,11 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# poem = Poem.create(poem: "To be, or not to be, that is the question:\n
-#     Whether 'tis nobler in the mind to suffer\n
-#     The slings and arrows of outrageous fortune,\n
-#     Or to take Arms against a Sea of troubles,\n
-#     And by opposing end them: to die, to sleep")
+Poem.create( { title: "pringle", poem: "To be, or not to be, that is the question:\n
+    Whether 'tis nobler in the mind to suffer\n
+    The slings and arrows of outrageous fortune,\n
+    Or to take Arms against a Sea of troubles,\n
+    And by opposing end them: to die, to sleep" } )
+Poem.create( { title: "albatross", poem: "To be, or not to be, that is the question:\n
+    Whether 'tis nobler in the mind to suffer\n
+    The slings and arrows of outrageous fortune,\n
+    Or to take Ar kefieomeoms against a Sea of troubles,\n
+    And by opposing end them: to die, to sleep" } )
+Poem.create( { title: "volcano", poem: "To be, or not to be, that is the question:\n
+    Whether 'tis nobler in the mind to suffer\n
+    The slings and arrowsakdflj 'eof of outrageous fortune,\n
+    Or to take Arms against a Sea of troubles,\n
+    And by opposing end them: to die, to sleep" } )
 # pizza = Word.create(name: "Pizza")
 # rainbow = Word.create(name: "Rainbow")
 # frank = User.create(name: "Frank")
