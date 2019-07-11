@@ -8,11 +8,11 @@
     </tr>
   </thead>
   <tbody>
-    <% @poem.each do |word| %>
+    <% @poems.each do |poem| %>
       <tr>
         <td><%= poem.title %></td>
         <td><%= poem.poem %></td>
-        <td><%= link_to 'Go back', user_path, class: "button" %></td>
+        <td><%= link_to 'Go back', users_path, class: "button" %></td>
       </tr>
     <% end %>
   </tbody>
