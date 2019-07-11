@@ -2,12 +2,12 @@ require 'rails_helper'
 
 describe 'navigate poem edit' do
   before do
-    @poem = Poem.create(poem: "yo yo, i love you boo")
+    Poem.create( {title: "clarece", poem: "yo yo, i love you boo"} )
   end
 
-  it 'shows the poem on the page in a p tag' do
-    visit poem_path(@poem.id)
-    expect(page).to have_css("p", text: "yo yo, i love you boo")
+  it 'shows the poem on the page' do
+    visit poems_path
+    expect(page).to have_content("yo yo, i love you boo")
   end
 end
 
