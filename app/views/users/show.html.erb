@@ -3,13 +3,15 @@
   <strong>List of Words:</strong>
   <%= link_to "Add Word", new_word_path %>
   <% @user.words.each do |word| %>
-    <li><%= word.name %></li>
-    <%= link_to "Delete Word", @word, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <li><%= word.name.capitalize %></li>
+    <%= select("post", "person_id", ApiService.rhymes_with(word.name), { include_blank: false }) %>
+    <%= button_to "Delete Word", word_path(word), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 </p>
 <p>
   <strong>List of Poems:</strong>
   <% @user.poems.each do |poem| %>
+    <%= byebug %>
     <li><%= poem.poem %></li>
     <%= link_to "edit", edit_poem_path(poem) %>
   <% end %>

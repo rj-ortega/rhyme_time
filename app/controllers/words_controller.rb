@@ -6,11 +6,12 @@ class WordsController < ApplicationController
   end
 
   def index
-    #need this action
+    #need this action or website will break
   end
 
   def create
     @word = Word.new(word_params)
+    UserWord.create(word: @word, user: @user)
 
     respond_to do |format|
       if @word.save
@@ -22,7 +23,7 @@ class WordsController < ApplicationController
   end
 
   def destroy
-    @word.destroy
+    UserWord.find_by(word_id: @word.id).destroy
     respond_to do |format|
       format.html { redirect_to user_path(@user), notice: "Word was successfully deleted." }
     end
