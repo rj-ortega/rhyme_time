@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Roboto|Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Cormorant:500,500i&display=swap');
+
+body {
+    font-family: 'roboto', sans-serif;
+    background-image: url(green-cup.png);
+    background-repeat: repeat;
+    margin: 0;
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    color: white;
+    background-image: url(black-background.png);
+    width: 100%;
+    margin: 0;
+    padding: 10px 0px;
+    height: 4em;
+}
+
+header h1 {
+    font-family: 'Cormorant', serif;
+    font-style: italic;
+    text-align: left;
+    margin: auto;
+    font-size: 4em;
+    padding: 15px 0px;
+}
+
+/* .grid {
+    grid-template-columns: repeat(5, 20vw);
+    grid-template-rows: repeat(5, 20vh);
+}
+
+.gridcontainer {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(5, 20vmin);
+    grid-template-rows: repeat(5, 20vmin);
+} */
