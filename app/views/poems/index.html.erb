@@ -10,6 +10,7 @@
   <tbody>
     <% @poem.each do |word| %>
       <tr>
+        <td><%= poem.title %></td>
         <td><%= poem.poem %></td>
         <td><%= link_to 'Go back', user_path %></td>
       </tr>
