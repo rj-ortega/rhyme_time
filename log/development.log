@@ -5701,3 +5701,384 @@ Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.0ms)
 
 
 
+Started GET "/users" for ::1 at 2019-07-10 21:40:49 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/DK/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 429ms (Views: 383.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-10 21:40:58 -0600
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered poems/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     8:     </tr>
+     9:   </thead>
+    10:   <tbody>
+    11:     <% @poem.each do |word| %>
+    12:       <tr>
+    13:         <td><%= poem.title %></td>
+    14:         <td><%= poem.poem %></td>
+  
+app/views/poems/index.html.erb:11:in `_app_views_poems_index_html_erb__2393807909568666391_70266464887000'
+Started GET "/users" for ::1 at 2019-07-10 21:41:04 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-07-10 21:41:06 -0600
+Processing by SessionsController#new as HTML
+  Rendering login/login.html.erb within layouts/application
+  Rendered login/login.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 51ms (Views: 34.1ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/login" for ::1 at 2019-07-10 21:41:13 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zOv2qMGWPbsYKAJIseT8qr0CkvGXnrVUX2I10SY7SuM4osJNkV7SJKVGwOeYNHmxGDu0EgIGTGiAh9ttr6O9eQ==", "user"=>{"username"=>"dustin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (137.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dustin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  Rendering login/login.html.erb within layouts/application
+  Rendered login/login.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 174ms (Views: 20.7ms | ActiveRecord: 139.3ms)
+
+
+Started GET "/users" for ::1 at 2019-07-10 21:41:17 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-07-10 21:41:18 -0600
+Processing by SessionsController#new as HTML
+  Rendering login/login.html.erb within layouts/application
+  Rendered login/login.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-07-10 21:41:25 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q0TOLQ6EBjkCCCqsg9ZBDlqXLZmZbV/pWySlAyizEnq3DfrIXkzppr9m6AOqBsQV/64Legz1ptWEwUu/oSvl4A==", "user"=>{"username"=>"dustin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dustin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  Rendering login/login.html.erb within layouts/application
+  Rendered login/login.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 66ms (Views: 34.9ms | ActiveRecord: 12.1ms)
+
+
+Started POST "/login" for ::1 at 2019-07-10 21:41:30 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CVsztKD1pmcuaF4iZf0wvUzpPw4RKzz7LV6UuZCZd4Kty/sIshlvM/PRagX+DqVTOFBSjEbOzbO7xpUGOF5Ssg==", "user"=>{"username"=>"dustin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dustin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  Rendering login/login.html.erb within layouts/application
+  Rendered login/login.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2019-07-10 21:41:47 -0600
+Processing by SessionsController#new as HTML
+  Rendering login/login.html.erb within layouts/application
+  Rendered login/login.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 58ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2019-07-10 21:41:49 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-07-10 21:42:08 -0600
+Processing by SessionsController#new as HTML
+  Rendering login/login.html.erb within layouts/application
+  Rendered login/login.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-07-10 21:42:14 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-07-10 21:42:25 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UJ6fRwMuhW0urzG8TxkxRMPj2v9ulci1Ixf7gjf09ceS8I2iDkNOdDPDIGrZkBE2VYZ89OqF2I87oeT5ewKUag==", "user"=>{"name"=>"dusitn", "username"=>"dbaby", "password"=>"[FILTERED]"}, "commit"=>"Create your account"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:27
+  [1m[36mUser Create (6.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "dusitn"], ["username", "dbaby"], ["password_digest", "$2a$10$tVlNx98hPEHTO2O/XZgNsu1JLHwfM0Q2O70sA9H6VtRzujIymiruO"], ["created_at", "2019-07-11 03:42:25.419999"], ["updated_at", "2019-07-11 03:42:25.419999"]]
+  ↳ app/controllers/users_controller.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:27
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 75ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/users/1" for ::1 at 2019-07-10 21:42:25 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56
+Redirected to http://localhost:3000/users
+Completed 302 Found in 15ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2019-07-10 21:42:25 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/poems" for ::1 at 2019-07-10 21:42:38 -0600
+Processing by PoemsController#index as HTML
+  Rendering poems/index.html.erb within layouts/application
+  Rendered poems/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     8:     </tr>
+     9:   </thead>
+    10:   <tbody>
+    11:     <% @poem.each do |word| %>
+    12:       <tr>
+    13:         <td><%= poem.title %></td>
+    14:         <td><%= poem.poem %></td>
+  
+app/views/poems/index.html.erb:11:in `_app_views_poems_index_html_erb__2393807909568666391_70266505325760'
+Started GET "/users" for ::1 at 2019-07-10 21:42:42 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-07-10 21:42:52 -0600
+Processing by SessionsController#new as HTML
+  Rendering login/login.html.erb within layouts/application
+  Rendered login/login.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 23ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-07-10 21:43:01 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y+Z6DuwCJJbq08dYb+UzyTta6wdvTNqRcDvTR1FzTgSXr07rvMrLCVe9BfdGNbbSnmPN5PrUI62v3j372Ou5ng==", "user"=>{"username"=>"dustin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dustin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  Rendering login/login.html.erb within layouts/application
+  Rendered login/login.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 44ms (Views: 37.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users" for ::1 at 2019-07-10 21:43:06 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2019-07-10 21:43:20 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56
+Redirected to http://localhost:3000/users
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2019-07-10 21:43:21 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2019-07-10 21:43:25 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56
+Redirected to http://localhost:3000/users
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2019-07-10 21:43:25 -0600
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2019-07-10 21:43:30 -0600
+Processing by SessionsController#new as HTML
+  Rendering login/login.html.erb within layouts/application
+  Rendered login/login.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 46ms (Views: 45.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-07-10 21:43:38 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RrqPVAJJKuazZqKV8W7g3o0lbOJqRSf+KWF4Vc01X7iy87uxUoHFeQ4IYDrYvmXFKBxKAf/d3sL2hJbpRK2oIg==", "user"=>{"username"=>"dustin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dustin"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+  Rendering login/login.html.erb within layouts/application
+  Rendered login/login.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/login" for ::1 at 2019-07-10 21:43:46 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UKFS+XTYZOxRBgwzIjQAl2cGDrZxpsO6NTlbidc6vA30MZpFZjStuIy/OBS5x5V5E79jNCZDMvKjoVo2f/2ZPQ==", "user"=>{"username"=>"dbaby", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dbaby"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 66ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/users/1" for ::1 at 2019-07-10 21:43:46 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWord Load (47.6ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "user_words" ON "words"."id" = "user_words"."word_id" WHERE "user_words"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mPoem Load (16.7ms)[0m  [1m[34mSELECT "poems".* FROM "poems" INNER JOIN "user_poems" ON "poems"."id" = "user_poems"."poem_id" WHERE "user_poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:12
+  Rendered users/show.html.erb within layouts/application (155.5ms)
+Completed 200 OK in 180ms (Views: 104.0ms | ActiveRecord: 73.5ms)
+
+
+Started GET "/words/new" for ::1 at 2019-07-10 21:43:50 -0600
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/new.html.erb within layouts/application (140.4ms)
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 6.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `words_path' for #<#<Class:0x00007fd0650a6508>:0x00007fd0650a4b90>
+Did you mean?  word_path):
+     9:     </ul>
+    10:   </div>
+    11: <% end %>
+    12: <%= form_for @word do |f| %>
+    13:   <div class="field">
+    14:     <%= f.label :name %>
+    15:     <%= f.text_field :name %>
+  
+app/views/words/new.html.erb:12:in `_app_views_words_new_html_erb__544352910492245283_70266512553520'
+Started GET "/users/1" for ::1 at 2019-07-10 21:44:00 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWord Load (2.4ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "user_words" ON "words"."id" = "user_words"."word_id" WHERE "user_words"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mPoem Load (0.8ms)[0m  [1m[34mSELECT "poems".* FROM "poems" INNER JOIN "user_poems" ON "poems"."id" = "user_poems"."poem_id" WHERE "user_poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:12
+  Rendered users/show.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 90ms (Views: 74.3ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/words/new" for ::1 at 2019-07-10 21:44:03 -0600
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/new.html.erb within layouts/application (153.1ms)
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `words_path' for #<#<Class:0x00007fd0650a6508>:0x00007fd0651c6168>
+Did you mean?  word_path):
+     9:     </ul>
+    10:   </div>
+    11: <% end %>
+    12: <%= form_for @word do |f| %>
+    13:   <div class="field">
+    14:     <%= f.label :name %>
+    15:     <%= f.text_field :name %>
+  
+app/views/words/new.html.erb:12:in `_app_views_words_new_html_erb__544352910492245283_70266513143040'
+Started GET "/users/1" for ::1 at 2019-07-10 21:44:43 -0600
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:56
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mWord Load (1.6ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "user_words" ON "words"."id" = "user_words"."word_id" WHERE "user_words"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mPoem Load (0.4ms)[0m  [1m[34mSELECT "poems".* FROM "poems" INNER JOIN "user_poems" ON "poems"."id" = "user_poems"."poem_id" WHERE "user_poems"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:12
+  Rendered users/show.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 96ms (Views: 74.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/words/new" for ::1 at 2019-07-10 21:44:44 -0600
+Processing by WordsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering words/new.html.erb within layouts/application
+  Rendered words/new.html.erb within layouts/application (138.5ms)
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `words_path' for #<#<Class:0x00007fd0650a6508>:0x00007fd0607c8f48>
+Did you mean?  word_path):
+     9:     </ul>
+    10:   </div>
+    11: <% end %>
+    12: <%= form_for @word do |f| %>
+    13:   <div class="field">
+    14:     <%= f.label :name %>
+    15:     <%= f.text_field :name %>
+  
+app/views/words/new.html.erb:12:in `_app_views_words_new_html_erb__544352910492245283_70266474320900'
+Started GET "/login" for ::1 at 2019-07-10 22:51:13 -0600
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/DK/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (40.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering login/login.html.erb within layouts/application
+  Rendered login/login.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 383ms (Views: 263.0ms | ActiveRecord: 86.4ms)
+
+
+Started GET "/" for ::1 at 2019-07-10 22:52:51 -0600
+Started GET "/users" for ::1 at 2019-07-10 22:52:51 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 75ms (Views: 56.5ms | ActiveRecord: 3.6ms)
+
+
