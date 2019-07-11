@@ -2,7 +2,11 @@ class WordsController < ApplicationController
   before_action :set_word, only: :destroy
 
   def new
-    @word = Word.new
+    @word = Word.new 
+  end
+
+  def index
+    #need this action
   end
 
   def create
