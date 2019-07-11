@@ -43,6 +43,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    UserWord.where(user_id: @user.id).destroy_all
+    UserPoem.where(user_id: @user.id).destroy_all
     @user.destroy
     session[:user_id] = nil
     respond_to do |format|
