@@ -3,6 +3,9 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    random_shakes = ApiService.shakespeare
+    @title = random_shakes["title"]
+    @lines_array = random_shakes["lines"]
   end
 
   def show
@@ -43,6 +46,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    UserWord.where(user_id: @user.id).destroy_all
+    UserPoem.where(user_id: @user.id).destroy_all
     @user.destroy
     session[:user_id] = nil
     respond_to do |format|

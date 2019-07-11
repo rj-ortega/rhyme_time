@@ -1,13 +1,9 @@
-require 'pry'
-require 'rest-client'
-require 'json'
-
-# def self.query
-#   api = RestClient.get("")
-#   @api = JSON.parse(api)
-# end
-
-class Api
+class ApiService
+  
+  # def self.query
+  #   api = RestClient.get("")
+  #   @api = JSON.parse(api)
+  # end
 
   def self.adjectives_for(word)
     api = RestClient.get("https://api.datamuse.com/words?rel_jjb=#{word}")
@@ -42,8 +38,6 @@ class Api
     api = RestClient.get("http://poetrydb.org/author,title/Shakespeare;Sonnet")
     shakes = JSON.parse(api)
     welcome_verse = shakes.sample
-    @title = welcome_verse["title"]
-    @lines_array = welcome_verse["lines"]
   end
 
 end
