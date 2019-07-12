@@ -1,4 +1,4 @@
-# BFF - Brewery Favorite Finder
+# Rhyme Time
 
 ## App to help users write rhyming poetry
 
@@ -6,7 +6,7 @@ Project by [@foggybrains](https://github.com/foggybrains) and [@rjortega](https:
 
 Thanks for checking it out!
 
-[Video of app rundown](https://www.)
+[Video of app rundown](https://www.wontwork.com)
 
 ## Basic flow of app
 
@@ -15,54 +15,71 @@ Thanks for checking it out!
    * Get inspired by a random Shakespeare Sonnet!
    * Visit the app github page and Flatiron School website through the links in the top right corner
 
-
    ![Welcome Menu](./assets/images/welcome.png)
 
-### User Menu
-   * Access to Favorites menu
-   * Ability to look up brewery by city or name
+### Create User/Sign Up
+   * Enter your Name, Username, and Password to securely login to your account
+   * Enjoy the number of users statistic, you may want to divide by 1 million...
+   
+   ![Create User](./assets/images/create_user.png)
 
+### Login
+   * Enter your existing username and password
+   * Check out the most recent poem entered into our database
 
-   ![User Menu](./assets/user_menu.png)
+   ![Login](./assets/images/login.png)
 
-### Favorite menu
-   * Ability to see favorite breweries
-   * Lets you query API for up to date information on brewery
-   * Allows you to delete a brewery from database linked to current user
-   * Allows you to delete ALL breweries from both:
-      * the database linked to the user
-      * the associated brewery table
+### Poem Index
+   * See a list of all the poems created by our creative users!
 
+   ![Poem Index](./assets/images/poem_index.png)
 
-   ![Favorites Menu](./assets/favorites_menu.png)
+### User Page
+   * List of Words
+       * Save all of your favorite words
+       * Click add word 
+       * See rhyming words
+       * See adjectives for words
+       * Delete your word
+   * List of Poems
+       * Click write your poem
+       * Save all of your poems
+       * Delete or edit your poems
+   * Log out of your account
+   * Delete your account
+       * Don't leave us!
 
-### API Brewery Query
-   * Built method to accept user input and query API for information using either:
-      * City
-      * Name of brewery
-   * After query user is prompted with the choice to save to favorites list
+   ![User Page](./assets/user_page.png)
 
+### Write Poetry
+   * Title your poem
+   * Write your poem
+   * Use the favorite words list at the bottom of the page
+       * See rhymes of favorite words and use them in your poem!
+       * See adjectives for favorite words and use them in your poem!
+   * Click 'Create Poem' to save it to your profile
+   * Add more favorite words and then use the poem edit button to finish your masterpiece!
 
-   ![Brewery Query](./assets/API_brewery_query.png)
-   ![Add To Favorites Prompt](./assets/add_to_favorites.png)
+   ![Write Poetry](./assets/write_poetry.png)
 
 ### Model
 
-   | User |>---------| Favorite Brewery |------------<| Brewery |   
+   | Poem |>---------| UserPoems |------------<| User |>---------| UserWords |------------<| Words |
 
 ### Assets used:
    * Ruby
    * jQuery
    * Sinatra
    * ActiveRecord
-   * Sqlite3
+   * Postgresql
    * JSON
    * Rake
    * Rest-Client
    * Binding.pry
 
 #### Credits
-   * API : thanks to Open Brewery DB for giving open access to their api
-      * created and maintained by Chris J Mears and Wandering Leaf Studios LLC.
-      * [link to API!](https://www.openbrewerydb.org)
+   * API : thanks to Datamuse API for giving open access to their api
+      * [link to API!](https://www.datamuse.com/api/)
+   * API : thanks to PoetryDB for giving open access to their api
+      * [link to API!](http://poetrydb.org/index.html)
    * Thanks to Flatiron Schools for guided support
