@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
-<h1 id="welcome">Welcome to Rhyme Time</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Options:</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= link_to 'Log In', login_path, class: "button" %></td>
-      <td><%= link_to 'Sign Up', signup_path, class: "button" %></td>
-      <td><%= link_to 'See all Poems', poems_path, class: "button" %></td>
-    </tr>
-    <div>
-    <%= @title %><br>
-    <% @lines_array.each do |line| %>
-    <%= line %>
-    <% end %>
-    </div>
-  </tbody>
-</table>
-<br>
+<div class="index">
+  <p id="notice"><%= notice %></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Welcome to Rhyme Time</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= link_to 'Log In', login_path, class: "button" %> |</td>
+        <td><%= link_to 'Sign Up', signup_path, class: "button" %> |</td>
+        <td><%= link_to 'See all Poems', poems_path, class: "button" %> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="sonnet">
+  <div id="sonnet_title"> <%= @title %></div>
+  <br>
+  <br>
+  <div id="sonnet_body"> <% @lines_array.each do |line| %>
+      <%= line %><br>
+    <% end %> </div>
+</div>

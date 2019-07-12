@@ -8,11 +8,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="container">
-    <div class="header">
-      <h1>Rhyme Time</h1>
-    </div>
+    <header class="header">
+      <a href="/">
+        <h1>Rhyme Time</h1>
+      </a>
+    </header>
     <a id="school_logo" href="https://flatironschool.com/"><img src="/assets/flatiron.gif" title="Flatiron Schools"></a>
     <a id="github_logo" href="https://github.com/rjortega/rhyme_time"><img src="/assets/github.png" title="Github Project"></a>
-    <div class="body_yield"> <%= yield %> </div>
+    <%= yield %>
   </body>
 </html>
