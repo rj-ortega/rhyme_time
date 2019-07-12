@@ -49,7 +49,7 @@ Thanks for checking it out!
    * Delete your account
        * Don't leave us!
 
-   ![User Page](./app/assets/user_page.png)
+   ![User Page](./app/assets/images/user_page.png)
 
 ### Write Poetry
    * Title your poem
@@ -60,7 +60,7 @@ Thanks for checking it out!
    * Click 'Create Poem' to save it to your profile
    * Add more favorite words and then use the poem edit button to finish your masterpiece!
 
-   ![Write Poetry](./app/assets/write_poetry.png)
+   ![Write Poetry](./app/assets/images/write_poetry.png)
 
 ### Model
 
