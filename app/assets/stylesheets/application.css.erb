@@ -179,7 +179,7 @@ background-image: url(<%= asset_path("blackwhite.png") %>);
 background-size: 100%;
 background-repeat: no-repeat;
 grid-column: 1 / 8;
-grid-row: 0 / 1;
+grid-row: 1;
 }
 .header a {
 text-decoration: none;
@@ -204,27 +204,29 @@ text-shadow: none;
 }
 .header,
 #github_logo,
-#school_logo {
+#school_logo{
 border-bottom: black solid 2px;
 }
-#github_logo {
-grid-column: 6;
+#github_link {
+grid-column: 8;
 grid-row: 1;
 }
 #github_logo {
 width: 65px;
 height: 65px;
 }
-#school_logo {
-grid-column: 7;
+#school_link {
+grid-column: 9;
 grid-row: 1;
+}
+#school_logo {
 width: 135px;
 height: 65px;
 }
 .container {
 display: grid;
 grid-template-columns: 135px 65px auto 5% 500px 5% auto 65px 135px;
-grid-template-rows: 65px 10% 20% auto 47% 5%;
+grid-template-rows: 65px 10% 20% auto 45% 13%;
 grid-auto-flow: row;
 }
 .index {
@@ -335,7 +337,7 @@ font-style: italic;
 line-height: 21px;
 }
 .index #welcome {
-padding-bottom: 80px;
+padding-bottom: 40px;
 font-size: 40px;
 }
 .poem_index {
