@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  <h5 class="analytics">The average number of characters per poem is <%= AnalyticService.number_of_char_per_poem %>; Try to beat that!</h5><br>
   <%= form_for @poem do |f| %>
     <div class="field">
       <%= f.label :title %>
