@@ -10,50 +10,30 @@
     <h5>The average number of poems created by our users is: <%= AnalyticService.average_number_of_poems%></h5>
     <p id="notice"><%= notice %>
       <br>
-      <br>
     </p>
-    <u>List of Words:</u>
+    <u>List of Words:</u><br>
+    <%= link_to "Add Word", new_word_path, class: "button" %>
     <% @user.words.each do |word| %>
       <br>
-      <br>
-      - <%= word.name.capitalize %><br>
-      <br>
-      <%= button_to "🗑", word_path(word), method: :delete, data: { confirm: 'Are you sure?' }, class: "button delete_button" %>
-      <br>
-      <br>
+      - <b><%= word.name.capitalize %></b><br>
       <p><%= "#{word.name.capitalize} rhymes with" %>
         <%= select("rhymes", "words_id", ApiService.rhymes_with(word.name), { include_blank: false }) %>
         <br>
+        <%= "Adjectives for #{word.name.capitalize}" %>
+        <%= select("adjectives", "words_id", ApiService.adjectives_for(word.name), { include_blank: false }) %>
         <br>
-        <p><%= "Descriptions of #{word.name.capitalize}" %>
-          <%= select("adjectives", "words_id", ApiService.adjectives_for(word.name), { include_blank: false }) %>
-          <br>
-          <br>
-        <% end %>
-      </p>
-      <br>
-      <br>
-      <%= link_to "Add Word", new_word_path, class: "button" %><br>
-    </p>
-    <br>
-    <br>
-    <br>
-    <p>
-      <u><strong>List of Poems:</u></strong><br>
-      <br>
-      <% @user.poems.each do |poem| %>
-        - <%= poem.title %><br>
-        <br>
-        <%= button_to "🗑", poem_path(poem), method: :delete, data: { confirm: 'Are you sure?' }, class: "button delete_button" %> |
-        <%= link_to "edit", edit_poem_path(poem), class: "button" %><br>
-        <br>
+        <%= button_to "🗑", word_path(word), method: :delete, data: { confirm: 'Are you sure?' }, class: "button delete_button" %>
       <% end %>
-      <br>
-      <br>
-      <br>
-      <%= link_to "Create Poem", new_poem_path, class: "button"%>
     </p>
-    <br>
-    <br>
-    <br>
-  </div>
+  </p>
+  <br>
+  <p>
+    <u><strong>List of Poems:</u></strong><br>
+    <%= link_to "Create Poem", new_poem_path, class: "button"%><br>
+    <% @user.poems.each do |poem| %>
+      - <b><%= poem.title %></b><br>
+      <%= button_to "🗑", poem_path(poem), method: :delete, data: { confirm: 'Are you sure?' }, class: "button delete_button" %> |
+      <%= link_to "edit", edit_poem_path(poem), class: "button" %><br>
+    <% end %>
+  </p>
+</div>

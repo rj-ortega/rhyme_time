@@ -24,4 +24,17 @@
     </div>
   <% end %>
   <%= link_to 'Back', user_path(@user), class: "button" %>
-</div>
+  <br>
+  <br>
+  <br>
+  <div class="favorites"><u>List of Favorite Words:</u>
+    <% @user.words.each do |word| %>
+      <br>
+      - <b><%= word.name.capitalize %></b><br>
+      <p><%= "#{word.name.capitalize} rhymes with" %>
+        <%= select("rhymes", "words_id", ApiService.rhymes_with(word.name), { include_blank: false }) %><br>
+        <%= "Adjectives for #{word.name.capitalize}" %>
+        <%= select("adjectives", "words_id", ApiService.adjectives_for(word.name), { include_blank: false }) %>
+      <% end%>
+    </div>
+  </div>
