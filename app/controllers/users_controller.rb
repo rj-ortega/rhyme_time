@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
+    session[:user_id] = nil
     @users = User.all
     random_shakes = ApiService.shakespeare
     @title = random_shakes["title"]

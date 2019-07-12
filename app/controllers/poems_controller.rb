@@ -14,14 +14,13 @@ class PoemsController < ApplicationController
 
   def create
     @poem = Poem.new(poem_params)
+    UserPoem.create(poem: @poem, user: @user)    
 
     respond_to do |format|
       if @poem.save
-        format.html { redirect_to @poem, notice: "Poem was successfully created." }
-        format.json { render :show, status: :created, location: @poem }
+        format.html { redirect_to @user, notice: "Poem was successfully created." }
       else
         format.html { render :new }
-        format.json { render json: @poem.errors, status: :unprocessable_entity }
       end
     end
   end

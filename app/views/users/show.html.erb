@@ -9,12 +9,13 @@
     <p><%= "Descriptions of #{word.name.capitalize}" %></p>
     <%= select("adjectives", "words_id", ApiService.adjectives_for(word.name), { include_blank: false }) %>
     <%= button_to "Delete Word", word_path(word), method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+    <br>
   <% end %>
 </p>
 <p>
   <strong>List of Poems:</strong>
+  <%= link_to "Create Poem", new_poem_path, class: "button"%>
   <% @user.poems.each do |poem| %>
-    <%= byebug %>
     <li><%= poem.poem %></li>
     <%= link_to "edit", edit_poem_path(poem), class: "button" %>
   <% end %>
