@@ -1,15 +1,15 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-describe 'navigate poem edit' do
-  before do
-    Poem.create( {title: "clarece", poem: "yo yo, i love you boo"} )
-  end
+# describe 'navigate poem edit' do
+#   before do
+#     Poem.create( {title: "clarece", poem: "yo yo, i love you boo"} )
+#   end
 
-  it 'shows the poem on the page' do
-    visit poems_path
-    expect(page).to have_content("yo yo, i love you boo")
-  end
-end
+#   it 'shows the poem on the page' do
+#     visit poems_path
+#     expect(page).to have_content("yo yo, i love you boo")
+#   end
+# end
 
 #   it 'displays a link to the edit page' do 
 #     visit poem_path(@poem.id)
@@ -28,21 +28,21 @@ end
 #     expect(page.status_code).to eq(200)
 #   end
 
-describe 'poem form' do
-  before do
-    @user = Poem.create(poem: "My poem")
-  end
+# describe 'poem form' do
+#   before do
+#     @user = Poem.create(poem: "My poem")
+#   end
 
-  it 'shows a new form that submits content and redirects and prints out params' do
-    visit new_song_path
+#   it 'shows a new form that submits content and redirects and prints out params' do
+#     visit new_song_path
 
-    fill_in 'poem[poem]', with: "My poem"
+#     fill_in 'poem[poem]', with: "My poem"
 
-    click_on "Create Poem"
+#     click_on "Create Poem"
 
-    expect(page).to have_content("My poem")
-  end
-end
+#     expect(page).to have_content("My poem")
+#   end
+# end
 
 #   it 'shows a new form that submits content and redirects and prints out params' do
 #     @song = Song.create(name: "My Song", artist_id: @artist.id, genre_id: @genre.id)
