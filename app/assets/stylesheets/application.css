@@ -297,6 +297,13 @@ table tbody td {
 .user_show {
     grid-column: 5;
     grid-row-start: 3;
+    line-height: 30px;
+}
+
+
+.poem_new .favorites,
+.poem_edit .favorites {
+    line-height: 30px
 }
 
 .user_show p {
@@ -335,8 +342,15 @@ input[type="reset"] {
     border-left: 1px solid #CCCCCC;
 }
 
-.user_show a .button {
+.user_show b,
+.poem_new b,
+.poem_edit b {
+    font-weight: bold;
+}
+
+.analytics h5 {
     text-align: center;
+    font-style: italic;
 }
 
 .sonnet {
