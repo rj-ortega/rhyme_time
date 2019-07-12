@@ -4,8 +4,10 @@
       <%= link_to "Logout", login_path, method: :delete, class: "button" %>
     <% end %><br>
     <%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+    <br>
   </h2>
   <p>
+    <h5>The average number of poems created by our users is: <%= AnalyticService.average_number_of_poems%></h5>
     <p id="notice"><%= notice %>
       <br>
       <br>
