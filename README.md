@@ -15,24 +15,24 @@ Thanks for checking it out!
    * Get inspired by a random Shakespeare Sonnet!
    * Visit the app github page and Flatiron School website through the links in the top right corner
 
-   ![Welcome Menu](./assets/images/welcome.png)
+   ![Welcome Menu](./app/assets/images/welcome.png)
 
 ### Create User/Sign Up
    * Enter your Name, Username, and Password to securely login to your account
    * Enjoy the number of users statistic, you may want to divide by 1 million...
    
-   ![Create User](./assets/images/create_user.png)
+   ![Create User](./app/assets/images/create_user.png)
 
 ### Login
    * Enter your existing username and password
    * Check out the most recent poem entered into our database
 
-   ![Login](./assets/images/login.png)
+   ![Login](./app/assets/images/login.png)
 
 ### Poem Index
    * See a list of all the poems created by our creative users!
 
-   ![Poem Index](./assets/images/poem_index.png)
+   ![Poem Index](./app/assets/images/poem_index.png)
 
 ### User Page
    * List of Words
@@ -49,7 +49,7 @@ Thanks for checking it out!
    * Delete your account
        * Don't leave us!
 
-   ![User Page](./assets/user_page.png)
+   ![User Page](./app/assets/user_page.png)
 
 ### Write Poetry
    * Title your poem
@@ -60,7 +60,7 @@ Thanks for checking it out!
    * Click 'Create Poem' to save it to your profile
    * Add more favorite words and then use the poem edit button to finish your masterpiece!
 
-   ![Write Poetry](./assets/write_poetry.png)
+   ![Write Poetry](./app/assets/write_poetry.png)
 
 ### Model
 
