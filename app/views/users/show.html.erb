@@ -1,26 +1,51 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>List of Words:</strong>
-  <%= link_to "Add Word", new_word_path, class: "button" %>
-  <% @user.words.each do |word| %>
-    <li><%= word.name.capitalize %></li>
-    <p><%= "#{word.name.capitalize} rhymes with" %></p>
-    <%= select("rhymes", "words_id", ApiService.rhymes_with(word.name), { include_blank: false }) %>
-    <p><%= "Descriptions of #{word.name.capitalize}" %></p>
-    <%= select("adjectives", "words_id", ApiService.adjectives_for(word.name), { include_blank: false }) %>
-    <%= button_to "Delete Word", word_path(word), method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+<div class="user_show">
+  <h2> Welcome <%= @user.name.capitalize %><br>
+    <% if @user && @user.id %>
+      <%= link_to "Logout", login_path, method: :delete, class: "button" %>
+    <% end %><br>
+    <%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+  </h2>
+  <p>
+    <p id="notice"><%= notice %>
+      <br>
+      <br>
+    </p>
+    <u>List of Words:</u>
+    <% @user.words.each do |word| %>
+      <br>
+      <br>
+      - <%= word.name.capitalize %>
+      <br>
+      <br>
+      <p><%= "#{word.name.capitalize} rhymes with" %>
+        <%= select("rhymes", "words_id", ApiService.rhymes_with(word.name), { include_blank: false }) %>
+        <br>
+        <br>
+        <p><%= "Descriptions of #{word.name.capitalize}" %>
+          <%= select("adjectives", "words_id", ApiService.adjectives_for(word.name), { include_blank: false }) %>
+          <br>
+          <br>
+          <%= button_to "🗑", word_path(word), method: :delete, data: { confirm: 'Are you sure?' }, class: "button delete_button" %>
+        <% end %>
+      </p>
+      <br>
+      <br>
+      <%= link_to "Add Word", new_word_path, class: "button" %><br>
+    </p>
     <br>
-  <% end %>
-</p>
-<p>
-  <strong>List of Poems:</strong>
-  <%= link_to "Create Poem", new_poem_path, class: "button"%>
-  <% @user.poems.each do |poem| %>
-    <li><%= poem.poem %></li>
-    <%= link_to "edit", edit_poem_path(poem), class: "button" %>
-  <% end %>
-</p>
-<% if @user && @user.id %>
-  <%= link_to "Logout", login_path, method: :delete, class: "button" %> |
-<% end %>
-<%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+    <br>
+    <br>
+    <p>
+      <u><strong>List of Poems:</u></strong>
+      <% @user.poems.each do |poem| %>
+        <%= poem.poem %>
+        <%= link_to "edit", edit_poem_path(poem), class: "button" %>
+      <% end %>
+      <br>
+      <br>
+      <%= link_to "Create Poem", new_poem_path, class: "button"%>
+    </p>
+    <br>
+    <br>
+    <br>
+  </div>

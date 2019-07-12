@@ -165,13 +165,13 @@ body {
 
 html {
     height: 100%;
+    text-shadow: 4px 4px 8px grey, 1px -1px 8px white, -1px 1px 8px white, -1px -1px 8px white;
 }
 
 body {
     font-family: 'roboto', sans-serif;
-    background-image: url(seamless_paper_texture.png);
+    background-image: url(backdrop.jpg);
     background-repeat: repeat;
-    text-align: center;
     width: 100%;
     min-height: 100%;
 }
@@ -181,11 +181,15 @@ table {
     margin-right: auto;
 }
 
+table tbody td {
+    padding: 0 10px;
+}
+
 .header {
     color: grey;
     background-image: url(blackwhite.png);
     background-size: 100%;
-    grid-column: 1 / 7;
+    grid-column: 1 / 8;
     grid-row: 0 / 1;
 }
 
@@ -211,6 +215,7 @@ table {
     margin: auto;
     font-size: 2.8em;
     padding: 10px 10px;
+    text-shadow: none;
 }
 
 .header,
@@ -220,7 +225,7 @@ table {
 }
 
 #github_logo {
-    grid-column: 7;
+    grid-column: 8;
     grid-row: 1;
 }
 
@@ -230,7 +235,7 @@ table {
 }
 
 #school_logo {
-    grid-column: 8;
+    grid-column: 9;
     grid-row: 1;
 }
 
@@ -241,35 +246,96 @@ table {
 
 .container {
     display: grid;
-    grid-template-columns: 135px 65px 10% auto 5% 5% 65px 135px;
-    grid-template-rows: 65px 10% 20% 18% 40% 5%;
+    grid-template-columns: 135px 65px auto 5% 500px 5% auto 65px 135px;
+    grid-template-rows: 65px 10% 20% auto 47% 5%;
     grid-auto-flow: row;
 }
 
 .index {
-    grid-column: 4 / 5;
+    grid-column: 5;
     grid-row-start: 3;
 }
 
-.button,
-[type=submit] {
+.index h1 {
+    text-align: center;
+}
+
+.user_show,
+.login,
+.word_new,
+.signup {
+    grid-column: 4 / span 3;
+    grid-row-start: 3;
+}
+
+.login {
+    text-align: center;
+}
+
+.login h2,
+.user_show h2,
+.word_new h2,
+.signup h2 {
+    font-size: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.user_show {
+    grid-column: 5;
+    grid-row-start: 3;
+}
+
+.user_show p {
+    text-align: left;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
     font: bold 11px Arial;
     text-decoration: none;
-    background-color: rgb(255, 255, 255);
+    background-color: #EEEEEE;
     color: #333333;
     padding: 2px 6px 2px 6px;
     border-top: 1px solid #CCCCCC;
     border-right: 1px solid #333333;
     border-bottom: 1px solid #333333;
     border-left: 1px solid #CCCCCC;
-    cursor: pointer;
+}
+
+.button {
+    font: bold 11px Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+}
+
+.user_show a .button {
+    text-align: center;
 }
 
 .sonnet {
-    grid-column: 4;
+    text-shadow: 4px 4px 8px grey, 1px -1px 8px white, -1px 1px 8px white, -1px -1px 8px white;
+    grid-column: 5;
     grid-row: 5;
-    box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, .05);
-    padding-top: 23px;
+    padding: 5%;
+    text-align: center;
+}
+
+.sonnet h2 {
+    font-size: 20px;
 }
 
 #sonnet_title {
@@ -278,4 +344,10 @@ table {
 
 .sonnet #sonnet_body {
     font-style: italic;
+    line-height: 21px;
+}
+
+.index #welcome {
+    padding-bottom: 80px;
+    font-size: 40px;
 }

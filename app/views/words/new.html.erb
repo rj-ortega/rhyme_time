@@ -1,21 +1,26 @@
-<h1>Add Word</h1>
-<% if @word.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(word.errors.count, "error") %> prohibited this word from being saved:</h2>
-    <ul>
-      <% word.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-<%= form_for @word do |f| %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-<%= link_to 'Back', "/", class: "button" %>
+<div class="word_new">
+  <h2>Add Word</h2>
+  <% if @word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(word.errors.count, "error") %> prohibited this word from being saved:</h2>
+      <ul>
+        <% word.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        <br>
+        <br>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_for @word do |f| %>
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+      <br>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+  <%= link_to 'Back', "/", class: "button" %>
+</div>
