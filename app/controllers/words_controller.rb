@@ -15,7 +15,8 @@ class WordsController < ApplicationController
 
     respond_to do |format|
       if @word.save
-        format.html { redirect_to @user, notice: "Word was successfully created." }
+        format.html { redirect_to user_path(@user), notice: "Word was successfully created." }
+        
       else
         format.html { render :new }
       end
