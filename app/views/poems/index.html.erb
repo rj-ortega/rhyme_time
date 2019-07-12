@@ -1,12 +1,15 @@
 <div class="poem_index">
   <h2>Poems</h2>
+  <%= link_to 'Go back', users_path, class: "button" %>
   <p id="notice"><%= notice %></p>
   <br>
   <br>
   <% @poems.each do |poem| %>
-    <%= poem.poem %>
-    <%= link_to 'Go back', users_path, class: "button" %>
+    <div class="poem_user">- <%= poem.users.collect{|user| user.username }.first %> -</div>
+    <div class="poem_title"><%= poem.title %></div>
+    <br>
+    <div class="poem_poem"><%= poem.poem %></div>
+    <br>
   <% end %>
   <br>
-  <%= link_to 'Add Poem', new_poem_path, class: "button" %>
 </div>

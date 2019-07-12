@@ -20,7 +20,9 @@
   <br>
   <br>
   <br>
-  <h5 class="analytics">Enjoy the last poem created by one of our users:</h5><br>
-  <h5 class="analytics"><%= AnalyticService.last_poem_created.title.capitalize %></h5><br>
-  <h5 class="analytics"><%= AnalyticService.last_poem_created.poem.capitalize %></h5>
+  <div class="analytics">Enjoy the last poem created by one of our users:</div>
+  <br>
+  <div class="login_title"><%= AnalyticService.last_poem_created.title.capitalize %></div>
+  <br>
+  <div class="login_poem"><%= AnalyticService.last_poem_created.poem.capitalize %></div>
 </div>

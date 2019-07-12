@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :destroy]
 
   def index
     session[:user_id] = nil
@@ -12,8 +12,6 @@ class UsersController < ApplicationController
   def show
     if (session[:user_id])
       @poems = Poem.all
-    else
-      redirect_to users_path
     end
   end
 
@@ -36,15 +34,15 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: "User was successfully updated." }
-      else
-        format.html { render :edit }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @user.update(user_params)
+  #       format.html { redirect_to @user, notice: "User was successfully updated." }
+  #     else
+  #       format.html { render :edit }
+  #     end
+  #   end
+  # end
 
   def destroy
     UserWord.where(user_id: @user.id).destroy_all

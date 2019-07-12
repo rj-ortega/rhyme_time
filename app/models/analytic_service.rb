@@ -25,4 +25,7 @@ class AnalyticService
         (char_count.to_f / counter.to_f).to_i
     end
 
+    def self.number_of_poems
+        Poem.count
+    end
 end
