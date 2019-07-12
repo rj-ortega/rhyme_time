@@ -6,25 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Poem.create( { title: "pringle", poem: "To be, or not to be, that is the question:\n
+pringle = Poem.create( { title: "pringle", poem: "To be, or not to be, that is the question:\n
     Whether 'tis nobler in the mind to suffer\n
     The slings and arrows of outrageous fortune,\n
     Or to take Arms against a Sea of troubles,\n
     And by opposing end them: to die, to sleep" } )
-Poem.create( { title: "albatross", poem: "To be, or not to be, that is the question:\n
+albatross = Poem.create( { title: "albatross", poem: "To be, or not to be, that is the question:\n
     Whether 'tis nobler in the mind to suffer\n
     The slings and arrows of outrageous fortune,\n
     Or to take Ar kefieomeoms against a Sea of troubles,\n
     And by opposing end them: to die, to sleep" } )
-Poem.create( { title: "volcano", poem: "To be, or not to be, that is the question:\n
+volcano = Poem.create( { title: "volcano", poem: "To be, or not to be, that is the question:\n
     Whether 'tis nobler in the mind to suffer\n
     The slings and arrowsakdflj 'eof of outrageous fortune,\n
     Or to take Arms against a Sea of troubles,\n
     And by opposing end them: to die, to sleep" } )
-# pizza = Word.create(name: "Pizza")
-# rainbow = Word.create(name: "Rainbow")
-# frank = User.create(name: "Frank")
-# UserWord.create(user: frank, word: pizza)
-# UserPoem.create(user: frank, poem: poem)
 
-# frank.words << rainbow
+dustino = User.create(name: "Dustin", username: "Dustino", password: "password")
+UserPoem.create(user: dustino, poem: volcano)
+UserPoem.create(user: dustino, poem: pringle)
+UserPoem.create(user: dustino, poem: albatross)
