@@ -1,5 +1,5 @@
 class PoemsController < ApplicationController
-  before_action :set_poem, only: [:edit, :update]
+  before_action :set_poem, only: [:edit, :update, :destroy]
 
   def index
     @poems = Poem.all
@@ -14,13 +14,13 @@ class PoemsController < ApplicationController
 
   def create
     @poem = Poem.new(poem_params)
-    UserPoem.create(poem: @poem, user: @user)    
+    UserPoem.create(poem: @poem, user: @user)
 
     respond_to do |format|
       if @poem.save
-        format.html { redirect_to @user, notice: "Poem was successfully created." }
+        format.html { redirect_to user_path(@user), notice: "Poem was successfully created." }
       else
-        format.html { render :new }
+        format.html { render :new, notice: "Poem must have a title" }
       end
     end
   end
@@ -28,12 +28,17 @@ class PoemsController < ApplicationController
   def update
     respond_to do |format|
       if @poem.update(poem_params)
-        format.html { redirect_to @poem, notice: "Poem was successfully updated." }
-        format.json { render :show, status: :ok, location: @poem }
+        format.html { redirect_to user_path(@user), notice: "Poem was successfully updated." }
       else
         format.html { render :edit }
-        format.json { render json: @poem.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    UserPoem.find_by(poem_id: @poem.id).destroy
+    respond_to do |format|
+      format.html { redirect_to user_path(@user), notice: "Poem was successfully deleted." }
     end
   end
 

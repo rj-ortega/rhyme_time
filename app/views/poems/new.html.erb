@@ -1,23 +1,26 @@
-<h1>Write your own Poetry</h1>
-<% if @poem.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(word.errors.count, "error") %> prohibited this word from being saved:</h2>
-    <ul>
-      <% word.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-<%= form_for @poem do |f| %>
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.label :poem %>
-    <%= f.text_field :poem %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-<%= link_to 'Back', "/", class: "button" %>
+<div class="poem_new">
+  <h2>Write your own Poetry</h2>
+  <% if @poem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@poem.errors.count, "error") %> prohibited this poem from being saved:</h2>
+      <ul>
+        <% @poem.errors.full_messages.each do |message| %>
+          <%= message %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_for @poem do |f| %>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title, :size => "40" %><br>
+      <br>
+      <%= f.label :poem %>
+      <%= f.text_area :poem, :cols => 110, :rows => 10 %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+  <%= link_to 'Back', user_path(@user), class: "button" %>
+</div>
