@@ -14,7 +14,7 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Cormorant:500,500i&display=swap');
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -173,7 +173,7 @@ html {
 }
 
 body {
-    font-family: 'roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
     background-image: url(backdrop.jpg);
     background-size: 100% 105%;
     background-repeat: repeat;
@@ -262,7 +262,8 @@ table tbody td {
     grid-row-start: 3;
 }
 
-.index h1 {
+.index h1,
+.index #notice {
     text-align: center;
 }
 
@@ -278,7 +279,8 @@ table tbody td {
 }
 
 .login,
-.signup {
+.signup,
+.poem_index {
     text-align: center;
 }
 
@@ -348,7 +350,7 @@ input[type="reset"] {
     font-weight: bold;
 }
 
-.analytics h5 {
+.analytics {
     text-align: center;
     font-style: italic;
 }
@@ -361,15 +363,20 @@ input[type="reset"] {
     text-align: center;
 }
 
-.sonnet h2 {
+.sonnet h2,
+.poem_index .poem_user {
     font-size: 20px;
 }
 
-#sonnet_title {
+#sonnet_title,
+.poem_index .poem_title,
+.login ._title {
     font-weight: bold;
 }
 
-.sonnet #sonnet_body {
+.sonnet #sonnet_body,
+.poem_index .poem_poem,
+.login .login_poem {
     font-style: italic;
     line-height: 21px;
 }
@@ -377,4 +384,8 @@ input[type="reset"] {
 .index #welcome {
     padding-bottom: 80px;
     font-size: 40px;
+}
+
+.poem_index {
+    line-height: 21px;
 }
