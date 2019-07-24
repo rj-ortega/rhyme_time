@@ -6,7 +6,7 @@ Project by [@foggybrains](https://github.com/foggybrains) and [@rjortega](https:
 
 Thanks for checking it out!
 
-[Video of app rundown](https://www.wontwork.com)
+[Heroku deployment](https://mysterious-tor-87367.herokuapp.com/users)
 
 ## Basic flow of app
 
