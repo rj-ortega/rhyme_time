@@ -2,7 +2,7 @@
 
 ## App to help users write rhyming poetry
 
-Project by [@codeHustler91](https://github.com/foggybrains) and [@rjortega](https://github.com/rjortega)
+Project by [@codeHustler91](https://github.com/codeHustler91) and [@rjortega](https://github.com/rj-ortega)
 
 Thanks for checking it out!
 
